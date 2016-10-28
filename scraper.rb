@@ -59,4 +59,4 @@ def scrape_person(url)
   data
 end
 
-(0..2).each { |i| scrape_list('http://parliament.gov.sy/arabic/index.php?node=210&First=0&Last=274&CurrentPage=%d' % i) }
+scrape_list('http://parliament.gov.sy/arabic/index.php?node=210&StartSearch=1&FName=&LName=&RID=1&City=-1&Cat=-1&Mem=-1&Aso=-1&Com=-1')
