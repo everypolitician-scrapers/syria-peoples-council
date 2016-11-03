@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Thu, 03 Nov 2016 11:39:47 GMT
+    - Thu, 03 Nov 2016 11:49:20 GMT
     Server:
     - nginx
     Content-Type:
@@ -32,12 +32,12 @@ response:
     Pragma:
     - no-cache
     Set-Cookie:
-    - PHPSESSID=gjnb5fqsu5ld5gse43ja1h88h0; path=/
+    - PHPSESSID=efas0bn8im53dcsd7ua144m5r4; path=/
     Content-Length:
-    - '44250'
+    - '44254'
     Connection:
     - close
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Thu, 03 Nov 2016 11:39:48 GMT
+recorded_at: Thu, 03 Nov 2016 11:49:21 GMT
