@@ -1,0 +1,43 @@
+---
+request:
+  method: get
+  uri: http://parliament.gov.sy/arabic/index.php?Aso=-1&Cat=-1&City=-1&Com=-1&CurrentPage=0&FName=&First=0&LName=&Last=262&Mem=-1&RID=1&nid=120&node=211&or=
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - '*/*'
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Date:
+    - Thu, 03 Nov 2016 12:46:46 GMT
+    Server:
+    - nginx
+    Content-Type:
+    - text/html
+    X-Powered-By:
+    - PHP/5.4.16
+    Expires:
+    - Thu, 19 Nov 1981 08:52:00 GMT
+    Cache-Control:
+    - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+    Pragma:
+    - no-cache
+    Set-Cookie:
+    - PHPSESSID=lng85ivf42a298699ir52emq73; path=/
+    Content-Length:
+    - '44343'
+    Connection:
+    - close
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Thu, 03 Nov 2016 12:46:47 GMT
