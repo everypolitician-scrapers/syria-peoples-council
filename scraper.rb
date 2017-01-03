@@ -24,7 +24,7 @@ def noko_for(url)
   Nokogiri::HTML(open(url).read)
 end
 
-def scrape_list(url)
+def scrape_list(term, url)
   puts url.to_s
   noko = noko_for(url)
   noko.xpath('//table[@id="list"]//tr[td]').each do |tr|
@@ -38,7 +38,7 @@ def scrape_list(url)
       area:     tds[1].text.tidy,
       category: tds[2].text.tidy,
       party:    tds[3].text.tidy,
-      term:     2012,
+      term:     term,
       deceased: tds[4].text.tidy,
       source:   link.to_s,
     }.merge scrape_person(link)
@@ -60,4 +60,5 @@ def scrape_person(url)
 end
 
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
-scrape_list('http://parliament.gov.sy/arabic/index.php?node=210&RID=1')
+scrape_list(2012, 'http://parliament.gov.sy/arabic/index.php?node=210&RID=1')
+scrape_list(2016, 'http://parliament.gov.sy/arabic/index.php?node=210&RID=26')
