@@ -61,4 +61,4 @@ end
 
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
 scrape_list(2012, 'http://parliament.gov.sy/arabic/index.php?node=210&RID=1')
-scrape_list(2016, 'http://parliament.gov.sy/arabic/index.php?node=210&StartSearch=1&FName=&LName=&RID=26&City=-1&Cat=-1&Mem=-1&Aso=-1&Com=-1')
+scrape_list(2016, 'http://parliament.gov.sy/arabic/index.php?node=210&RID=26')
