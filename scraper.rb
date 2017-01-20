@@ -22,23 +22,6 @@ def scrape_list(term, url)
     row.to_h.merge(scrape(row.source => MemberPage).to_h)
        .merge(term: term)
   end
-  data.map! do |row|
-    h = {
-      id:         row[:id],
-      name:       row[:name],
-      area:       row[:area],
-      category:   row[:category],
-      party:      row[:party],
-      term:       row[:term],
-      deceased:   row[:deceased],
-      source:     row[:source],
-      birth_date: row[:birth_date],
-      email:      row[:email],
-      image:      row[:image],
-    }
-    puts h
-    h
-  end
   ScraperWiki.save_sqlite(%i(id term), data)
 end
 
