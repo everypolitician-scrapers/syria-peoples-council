@@ -17,20 +17,10 @@ def scrape(h)
   klass.new(response: Scraped::Request.new(url: url).response)
 end
 
-def date_from(text)
-  return if text.to_s.empty?
-  Date.parse(text).to_s
-end
-
-def noko_for(url)
-  Nokogiri::HTML(open(url).read)
-end
-
 def scrape_list(term, url)
-  puts url.to_s
-  data = (scrape url => MembersPage).member_rows.map do |row|
-    row.merge scrape_person(row[:source])
-      .merge(term: term)
+  data = (scrape url => MembersPage).members.map do |row|
+    row.to_h.merge(scrape(row.source => MemberPage).to_h)
+       .merge(term: term)
   end
   data.map! do |row|
     h = {
@@ -50,19 +40,6 @@ def scrape_list(term, url)
     h
   end
   ScraperWiki.save_sqlite(%i(id term), data)
-end
-
-def scrape_person(url)
-  noko = noko_for(url)
-
-  # Members
-  data = {
-    birth_date: date_from(noko.xpath('//td/b[contains(.,"تاريخ الولادة")]/following-sibling::text()').text),
-    email:      noko.xpath('//td/b[contains(.,"البريد الإلكتروني")]/following-sibling::text()[contains(.,"@")]').text.split(/ /).find { |e| e.include? '@' },
-    image:      noko.css('.alginLeft img/@src').text,
-  }
-  data[:image] = URI.join(url, data[:image]).to_s unless data[:image].to_s.empty?
-  data
 end
 
 ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
