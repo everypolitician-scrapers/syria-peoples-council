@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Sat, 11 Feb 2017 01:04:26 GMT
+    - Sat, 11 Feb 2017 19:40:11 GMT
     Server:
     - Apache
     X-Powered-By:
@@ -35,7 +35,7 @@ response:
     Content-Type:
     - text/html
     Set-Cookie:
-    - PHPSESSID=50piu26s9mb2nrlj27kq1jtll3; path=/
+    - PHPSESSID=la708mhjfsg17f43215oq59q96; path=/
     Content-Length:
     - '44042'
     Connection:
@@ -43,4 +43,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Sat, 11 Feb 2017 01:04:27 GMT
+recorded_at: Sat, 11 Feb 2017 19:40:12 GMT
