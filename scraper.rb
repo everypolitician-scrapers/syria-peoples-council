@@ -25,6 +25,6 @@ def scrape_list(term, url)
   ScraperWiki.save_sqlite(%i(id term), data)
 end
 
-ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
 scrape_list(2012, 'http://parliament.gov.sy/arabic/index.php?node=210&RID=1')
 scrape_list(2016, 'http://parliament.gov.sy/arabic/index.php?node=210&RID=26')
